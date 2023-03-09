@@ -7,20 +7,27 @@ A fish plugin to help dynamically load fish completions from `$XDG_DATA_DIRS`.
 ### home-manager
 
 ```nix
-programs.fish = {
-  # ...
-  plugins = [
-    #...
-    {
-      pkgs.fetchFromGitHub {
-        owner = "pfgray";
-        repo = "fish-completion-sync";
-        rev = "...";
-        sha256 = "...";
+{
+  programs.fish = {
+    # ...
+    plugins = [
+      #...
+      {
+        pkgs.fetchFromGitHub {
+          owner = "pfgray";
+          repo = "fish-completion-sync";
+          rev = "483145eb997c47dd8b16f193dd0b927d76ec122c";
+          sha256 = "sha256-MnrDegGc3kmnfL021JZWRLR8iaYYwwoy0FpUSP7AeVA=";
+        }
       }
-    }
-  ];
-};
+    ];
+  };
+}
+```
+
+### fisher
+```
+fisher install pfgray/fish-completion-sync
 ```
 
 ## Why
