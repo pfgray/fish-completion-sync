@@ -32,6 +32,9 @@ function fish_completion_sync --on-variable XDG_DATA_DIRS
   for addition in $FISH_COMPLETION_ADDITIONS
     # test if addition is in xdg_data_dirs
     if not contains $addition $FISH_COMPLETION_DATA_DIRS
+      if set -q FISH_COMPLETION_DEBUG
+        echo "removing: $data_dir"
+      end
       set fish_complete_path (fish_completion_sync_filter $addition $fish_complete_path)
       set FISH_COMPLETION_ADDITIONS (fish_completion_sync_filter $addition $FISH_COMPLETION_ADDITIONS)
     end
@@ -43,6 +46,9 @@ function fish_completion_sync --on-variable XDG_DATA_DIRS
   #   add them to $FISH_COMPLETION_ADDITIONS
   for data_dir in $FISH_COMPLETION_DATA_DIRS
     if not contains $data_dir $FISH_COMPLETION_ADDITIONS
+      if set -q FISH_COMPLETION_DEBUG
+        echo "adding: $data_dir"
+      end
       set -a fish_complete_path $data_dir
       set -a FISH_COMPLETION_ADDITIONS $data_dir
     end

@@ -61,3 +61,13 @@ function fish_completion_sync --on-variable XDG_DATA_DIRS
   echo "got new data dirs: $XDG_DATA_DIRS"
 end
 ```
+
+### Caveats
+
+This has been working well for me, but it's stopped working a few times, and I haven't been able to pinpoint why. If you experience this, you can set the environment variable `FISH_COMPLETION_DEBUG` to help debug:
+
+```fish
+set -x FISH_COMPLETION_DEBUG 1
+```
+
+Submit an issue if the problem persists.
