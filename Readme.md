@@ -17,8 +17,8 @@ A fish plugin to help dynamically load fish completions from `$XDG_DATA_DIRS`.
         src = pkgs.fetchFromGitHub {
           owner = "pfgray";
           repo = "fish-completion-sync";
-          rev = "483145eb997c47dd8b16f193dd0b927d76ec122c";
-          sha256 = "sha256-MnrDegGc3kmnfL021JZWRLR8iaYYwwoy0FpUSP7AeVA=";
+          rev = "ba70b6457228af520751eab48430b1b995e3e0e2";
+          sha256 = "sha256-JdOLsZZ1VFRv7zA2i/QEZ1eovOym/Wccn0SJyhiP9hI=";
         };
       }
     ];
